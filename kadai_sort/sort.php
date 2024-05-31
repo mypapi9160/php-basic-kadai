@@ -6,33 +6,34 @@
 </head>
 <body>
   <p>
-    <?php
-    function $sort_2way($order){
-      $nums = array(15, 4, 18, 23, 10);
+  <?php
+        // 昇順・降順を選択して配列をソートする関数
+        function sort_2way($array, $order) {
 
-      if($order === true){
 
-        echo '昇順にソートします。<br>';
-        foreach ($nums as $num){
-          sort($num);
-          print_r($num . <br>);
+            // TRUEなら昇順、TRUEでなければ降順にソート
+            if ($order) {
+                echo '昇順にソートします。<br>';
+                sort($array);
+            } else {
+                echo '降順にソートします。<br>';
+                rsort($array);
+            }
+
+            // ソート結果を1行ずつ表示
+            foreach ($array as $array) {
+                echo $array . '<br>';
+            }
+
         }
+            // ソートする配列を宣言
+            $nums = [15, 4, 18, 23, 10 ];
 
-      }else{
-        echo '降順にソートします。<br>';
-        foreach ($nums as $num){
-          rsort($num);
-          print_r($num . <br>);
-        }
-      }
-    }
-
-    $sort_2way(TRUE);
-    $sort_2way(FALSE);
-
-    ?>
-
-  </p>
-  
+            // 昇順にソート
+            sort_2way($nums , TRUE);
+            // 降順にソート
+            sort_2way($nums , FALSE);
+        
+        ?>
 </body>
 </html>
